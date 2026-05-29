@@ -1,24 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>NioralPlus</title>
+
+<style>
+body{
+margin:0;
+font-family:tahoma;
+background:#f5f5f5;
+direction:rtl;
+}
+
+/* هدر */
+header{
+background:#0a1f44;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+align-items:center;
+}
+
+header nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* هیرو */
+.hero{
+height:400px;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-shadow:0 0 10px black;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+/* تورها */
+.tours{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:40px;
+flex-wrap:wrap;
+}
+
+.tour-card{
+background:white;
+width:220px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.tour-card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+button{
+background:#ff6600;
+border:none;
+color:white;
+padding:10px;
+margin:10px;
+cursor:pointer;
+border-radius:5px;
+}
+</style>
+
+</head>
+
+<body>
+
 <header>
-    <h2 style="display:flex;align-items:center;gap:10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" width="30">
-        NioralPlus
-    </h2>
-    <nav>
-        <a href="#">تور</a>
-        <a href="#">پرواز</a>
-        <a href="#">قطار</a>
-        <a href="#">هتل</a>
-    </nav>
+<h2>✈️ NioralPlus</h2>
+<nav>
+<a href="#">تور</a>
+<a href="#">پرواز</a>
+<a href="#">هتل</a>
+</nav>
 </header>
 
-<section class="hero" style="
-background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
-">
-<h1>لاکچری سفر کن ✨</h1>
-<p>بهترین تجربه سفر با NioralPlus</p>
+<section class="hero">
+<h1>سفر لوکس با ما</h1>
+<p>رزرو آنلاین بلیط، تور و هتل</p>
 </section>
 
-<!-- تورها -->
 <section class="tours">
 
 <div class="tour-card">
@@ -42,11 +120,7 @@ background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') c
 <button>رزرو</button>
 </div>
 
-<div class="tour-card">
-<img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365">
-<h3>بانکوک</h3>
-<p>از 18 میلیون</p>
-<button>رزرو</button>
-</div>
-
 </section>
+
+</body>
+</html>
