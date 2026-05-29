@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NioralPlus | آژانس مسافرتی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: sans-serif;
-    background: #f5f7fa;
+    font-family: 'Vazirmatn', sans-serif;
+    background: #f4f6f9;
 }
 
 /* HEADER */
@@ -18,81 +21,113 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background: #0f2027;
+    background: linear-gradient(90deg,#0f2027,#203a43,#2c5364);
     color: white;
 }
 nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
+    font-size: 15px;
+}
+nav a:hover {
+    color: #ffb347;
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url("https://picsum.photos/1200/500");
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://picsum.photos/1400/500");
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
+
+.hero h1 {
+    font-size: 36px;
+}
+
 .search-box {
     background: white;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 12px;
     display: inline-block;
+    margin-top: 20px;
 }
-.search-box input, .search-box button {
+
+.search-box input {
     padding: 10px;
     margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background: #ff7e5f;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* SERVICES */
 .services {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 40px;
+    gap: 25px;
+    padding: 50px;
 }
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
     width: 120px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* TOURS */
 .tours {
-    padding: 40px;
+    padding: 50px;
     text-align: center;
 }
 .tour-card {
     display: inline-block;
-    width: 250px;
-    margin: 10px;
+    width: 260px;
+    margin: 15px;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 .tour-card img {
     width: 100%;
+}
+.tour-card h3 {
+    margin: 10px 0;
 }
 .tour-card button {
     background: #ff7e5f;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
+    cursor: pointer;
 }
 
 /* FEATURES */
 .features {
     display: flex;
     justify-content: space-around;
-    padding: 40px;
-    background: #fff;
+    padding: 50px;
+    background: white;
+    font-size: 18px;
 }
 
 /* FOOTER */
@@ -100,9 +135,10 @@ footer {
     background: #0f2027;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
 }
 </style>
+
 </head>
 
 <body>
@@ -119,8 +155,8 @@ footer {
 </header>
 
 <section class="hero">
-    <h1>سفر رو حرفه‌ای تجربه کن</h1>
-    <p>رزرو بلیط، تور، هتل و ویلا با بهترین قیمت</p>
+    <h1>با NioralPlus دنیا رو کشف کن 🌍</h1>
+    <p>رزرو سریع و ارزان بلیط و تور</p>
 
     <div class="search-box">
         <input type="text" placeholder="مبدا">
@@ -139,7 +175,7 @@ footer {
 </section>
 
 <section class="tours">
-    <h2>تورهای ویژه</h2>
+    <h2>🔥 تورهای پیشنهادی</h2>
 
     <div class="tour-card">
         <img src="https://picsum.photos/300/200">
@@ -165,7 +201,7 @@ footer {
 </section>
 
 <footer>
-    <p>NioralPlus © 2026</p>
+    <p>© 2026 NioralPlus</p>
 </footer>
 
 </body>
