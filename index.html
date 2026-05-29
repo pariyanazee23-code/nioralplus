@@ -3,206 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NioralPlus | آژانس مسافرتی</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+<title>NioralPlus</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Vazirmatn', sans-serif;
-    background: #f4f6f9;
-}
-
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: linear-gradient(90deg,#0f2027,#203a43,#2c5364);
-    color: white;
-}
-nav a {
-    color: white;
-    margin: 0 12px;
-    text-decoration: none;
-    font-size: 15px;
-}
-nav a:hover {
-    color: #ffb347;
-}
+body {font-family:sans-serif;margin:0;background:#f4f6f9}
 
 /* HERO */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url("https://picsum.photos/1400/500");
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+.hero{
+background:url("https://picsum.photos/1400/500") center/cover;
+padding:100px 20px;
+text-align:center;
+color:white;
 }
 
-.hero h1 {
-    font-size: 36px;
+.search-box{
+background:white;
+padding:20px;
+border-radius:10px;
+display:inline-block;
 }
 
-.search-box {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    display: inline-block;
-    margin-top: 20px;
+input,button{
+padding:10px;margin:5px;border-radius:8px;border:1px solid #ccc;
 }
 
-.search-box input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+button{
+background:#ff7e5f;color:white;border:none;cursor:pointer;
 }
 
-.search-box button {
-    padding: 10px 20px;
-    background: #ff7e5f;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+/* RESULTS */
+.results{
+padding:40px;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
 }
 
-/* SERVICES */
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 50px;
-}
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 120px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+width:250px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* TOURS */
-.tours {
-    padding: 50px;
-    text-align: center;
-}
-.tour-card {
-    display: inline-block;
-    width: 260px;
-    margin: 15px;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-.tour-card img {
-    width: 100%;
-}
-.tour-card h3 {
-    margin: 10px 0;
-}
-.tour-card button {
-    background: #ff7e5f;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    cursor: pointer;
-}
-
-/* FEATURES */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    background: white;
-    font-size: 18px;
-}
-
-/* FOOTER */
-footer {
-    background: #0f2027;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h2>NioralPlus ✈️</h2>
-    <nav>
-        <a href="#">تور</a>
-        <a href="#">پرواز</a>
-        <a href="#">قطار</a>
-        <a href="#">اتوبوس</a>
-        <a href="#">هتل</a>
-    </nav>
-</header>
-
 <section class="hero">
-    <h1>با NioralPlus دنیا رو کشف کن 🌍</h1>
-    <p>رزرو سریع و ارزان بلیط و تور</p>
+<h1>NioralPlus ✈️</h1>
 
-    <div class="search-box">
-        <input type="text" placeholder="مبدا">
-        <input type="text" placeholder="مقصد">
-        <input type="date">
-        <button>جستجو</button>
-    </div>
+<div class="search-box">
+<input id="from" placeholder="مبدا">
+<input id="to" placeholder="مقصد">
+<button onclick="search()">جستجو</button>
+</div>
 </section>
 
-<section class="services">
-    <div class="card">✈️<br>پرواز</div>
-    <div class="card">🚆<br>قطار</div>
-    <div class="card">🚌<br>اتوبوس</div>
-    <div class="card">🏨<br>هتل</div>
-    <div class="card">🌴<br>تور</div>
-</section>
+<section class="results" id="results"></section>
 
-<section class="tours">
-    <h2>🔥 تورهای پیشنهادی</h2>
+<script>
 
-    <div class="tour-card">
-        <img src="https://picsum.photos/300/200">
-        <h3>استانبول</h3>
-        <p>از 10 میلیون</p>
-        <button>رزرو</button>
-    </div>
+// دیتابیس فیک
+const tours = [
+{from:"تهران",to:"استانبول",price:"10 میلیون"},
+{from:"تهران",to:"دبی",price:"15 میلیون"},
+{from:"مشهد",to:"کیش",price:"5 میلیون"}
+];
 
-    <div class="tour-card">
-        <img src="https://picsum.photos/300/201">
-        <h3>دبی</h3>
-        <p>از 15 میلیون</p>
-        <button>رزرو</button>
-    </div>
+function search(){
+let from = document.getElementById("from").value;
+let to = document.getElementById("to").value;
 
-</section>
+let resultBox = document.getElementById("results");
+resultBox.innerHTML = "";
 
-<section class="features">
-    <div>💰 بهترین قیمت</div>
-    <div>⚡ رزرو سریع</div>
-    <div>🔐 پرداخت امن</div>
-    <div>📞 پشتیبانی 24 ساعته</div>
-</section>
+let filtered = tours.filter(t =>
+t.from.includes(from) && t.to.includes(to)
+);
 
-<footer>
-    <p>© 2026 NioralPlus</p>
-</footer>
+if(filtered.length === 0){
+resultBox.innerHTML = "<p>موردی پیدا نشد 😢</p>";
+return;
+}
+
+filtered.forEach(t=>{
+resultBox.innerHTML += `
+<div class="card">
+<h3>${t.to}</h3>
+<p>از ${t.from}</p>
+<p>${t.price}</p>
+<button onclick="alert('رزرو انجام شد 😄')">رزرو</button>
+</div>
+`;
+});
+}
+
+</script>
 
 </body>
 </html>
