@@ -31,7 +31,7 @@ text-decoration:none;
 /* هیرو */
 .hero{
 height:400px;
-background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+background:url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Istanbul_skyline.jpg') center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -55,16 +55,21 @@ flex-wrap:wrap;
 
 .tour-card{
 background:white;
-width:220px;
+width:240px;
 border-radius:10px;
 overflow:hidden;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 text-align:center;
+transition:0.3s;
+}
+
+.tour-card:hover{
+transform:scale(1.05);
 }
 
 .tour-card img{
 width:100%;
-height:150px;
+height:160px;
 object-fit:cover;
 }
 
@@ -76,6 +81,11 @@ padding:10px;
 margin:10px;
 cursor:pointer;
 border-radius:5px;
+transition:0.3s;
+}
+
+button:hover{
+background:#e65500;
 }
 </style>
 
@@ -100,25 +110,21 @@ border-radius:5px;
 <section class="tours">
 
 <div class="tour-card">
-
-<img src="3.jpg">
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Istanbul_skyline.jpg" alt="Istanbul">
 <h3>استانبول</h3>
 <p>از 10 میلیون</p>
 <button>رزرو</button>
 </div>
 
 <div class="tour-card">
-
-<img src="4.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Dubai_skyline.jpg" alt="Dubai">
 <h3>دبی</h3>
 <p>از 15 میلیون</p>
 <button>رزرو</button>
 </div>
 
 <div class="tour-card">
-
-<img src="4.jpg">
+<img src="https://picsum.photos/400/300?random=7" alt="Maldives">
 <h3>مالدیو</h3>
 <p>از 30 میلیون</p>
 <button>رزرو</button>
